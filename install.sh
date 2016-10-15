@@ -16,7 +16,7 @@ main () {
 
 intro() {
   echo "================================================="
-  echo $'\e[34mDaylight Kiosk Installation\e[39m'
+  echo $'\e[32mDaylight Kiosk Installation\e[39m'
 }
 
 get_wunderground_key () {
@@ -89,8 +89,6 @@ autostart_chromium() {
   echo "Setting Chromium to autostart..."
   STARTUP_URL="https://danmconrad.github.io/daylight/?token=$WUNDER_KEY"
 
-  echo $STARTUP_URL
-
   echo "@chromium-browser --start-fullscreen --disable-session-crashed-bubble --disable-infobars --kiosk $STARTUP_URL" >> ~/.config/lxsession/LXDE-pi/autostart
   echo "@unclutter -idle 0.1 -root" >> ~/.config/lxsession/LXDE-pi/autostart
 }
@@ -126,7 +124,7 @@ modify_cron() {
 }
 
 show_complete() {
-  echo $'\n\n\e[34mAll done! You can restart your PI by typing "sudo reboot -h now"\e[39m\n\n'
+  echo $'\n\n\e[32mAll done! You can restart your PI by typing "sudo reboot -h now"\e[39m\n\n'
 }
 
 main
