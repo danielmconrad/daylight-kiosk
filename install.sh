@@ -71,6 +71,11 @@ prevent_monitor_sleep() {
   if [[ ! $REPLY =~ ^[Nn]$ ]]
   then
     echo "Modifying files..."
+    touch ~/.xinitrc
+    echo "@xset s noblank" >> ~/.xinitrc
+    echo "@xset s off" >> ~/.xinitrc
+    echo "@xset -dpms" >> ~/.xinitrc
+    sudo sed -i 's/@xscreensaver/#@xscreensaver/' /etc/xdg/lxsession/LXDE/autostart
     sudo bash -c "echo 'xserver-command=X -s 0 dpms' >> /etc/lightdm/lightdm.conf"
   fi
 }
