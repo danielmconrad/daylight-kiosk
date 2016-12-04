@@ -75,6 +75,12 @@ prevent_monitor_sleep() {
     echo "@xset s noblank" >> ~/.xinitrc
     echo "@xset s off" >> ~/.xinitrc
     echo "@xset -dpms" >> ~/.xinitrc
+    echo "@xset s 0 0" >> ~/.config/lxsession/LXDE-pi/autostart
+    echo "@xset s noblank" >> ~/.config/lxsession/LXDE-pi/autostart
+    echo "@xset s noexpose" >> ~/.config/lxsession/LXDE-pi/autostart
+    echo "@xset dpms 0 0 0" >> ~/.config/lxsession/LXDE-pi/autostart
+
+    
     sudo sed -i 's/@xscreensaver/#@xscreensaver/' /etc/xdg/lxsession/LXDE/autostart
     sudo bash -c "echo 'xserver-command=X -s 0 dpms' >> /etc/lightdm/lightdm.conf"
   fi
