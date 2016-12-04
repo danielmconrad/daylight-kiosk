@@ -100,7 +100,7 @@ autostart_chromium() {
 
 copy_screen_script() {
   echo
-  read -p $'\e[33mDoes your TV support CEC? \e[2m(\e[0mY\e[2m/n)\e[0m \e[39m' -r REPLY
+  read -p $'\e[33mDoes your TV support CEC? If so, make sure to install the \ncec-client the instructions here https://github.com/Pulse-Eight/libcec/ \e[2m(\e[0mY\e[2m/n)\e[0m \e[39m' -r REPLY
 
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
