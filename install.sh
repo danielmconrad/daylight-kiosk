@@ -100,7 +100,7 @@ autostart_chromium() {
   echo "Setting Chromium to autostart..."
   STARTUP_URL="http://daylight.danmconrad.com?token=$WUNDER_KEY"
 
-  echo "@chromium-browser --start-fullscreen --disable-session-crashed-bubble --disable-infobars --kiosk $STARTUP_URL" >> ~/.config/lxsession/LXDE-pi/autostart
+  echo "@chromium-browser --kiosk --start-maximized --incognito --disable-infobars $STARTUP_URL" >> ~/.config/lxsession/LXDE-pi/autostart
   echo "@unclutter -idle 0.1 -root" >> ~/.config/lxsession/LXDE-pi/autostart
 }
 
